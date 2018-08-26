@@ -1,6 +1,10 @@
 package collections;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class Collections
 {
@@ -24,5 +28,20 @@ public class Collections
 		}
 		
 		stringArrayList.remove(2);
+		
+		// hash maps
+		HashMap<String, Integer> users=new HashMap<>();
+		
+		users.put("user1", 1);
+		users.put("user2", 2);
+		users.put("user3", 3);
+		users.put("user4", 4);
+		
+		Iterator<?> iterator=users.entrySet().iterator();
+		while(iterator.hasNext())
+		{
+			Map.Entry pair=(Entry) iterator.next();
+			System.out.println(pair.getKey()+":"+pair.getValue());
+		}
 	}
 }
